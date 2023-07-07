@@ -7,11 +7,11 @@ class AllowView(views.APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
-        return Response({"success": "ok"}, status=status.HTTP_200_OK)
+        return Response({"message": "allow"}, status=status.HTTP_200_OK)
 
 
 class RequiredPermissionView(views.APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        return Response({"success": "ok"}, status=status.HTTP_200_OK)
+        return Response({"message": "required"}, status=status.HTTP_200_OK)
